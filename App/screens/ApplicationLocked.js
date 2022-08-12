@@ -21,7 +21,7 @@ export default class ApplicationLocked extends Component {
   componentDidMount() {
     setInterval(() => {
       this.setState({seconds: this.state.seconds - 1});
-      if (this.seconds == 0) {
+      if (this.seconds === 0) {
         this.setState({minutes: this.state.minutes - 1});
       }
     }, 1000);
@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     fontFamily: 'Roboto-Light',
     padding: 8,
-    color: 'red',
     height: 40,
     width: 100,
   },
