@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
-/*import LockScreenPasscode from'../App/screens/LockScreenPasscode';*/
+import LockScreenPasscode from '../App/screens/LockScreenPasscode';
 import ApplicationLocked from '../App/screens/ApplicationLocked';
 
 export default class Root extends Component {
   render() {
     return (
-      /*<LockedScreenPasscode />*/
-      <ApplicationLocked />
+      <LockScreenPasscode />
+      // <ApplicationLocked />
     );
   }
 }

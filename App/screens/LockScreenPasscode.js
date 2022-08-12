@@ -16,22 +16,18 @@ class LockScreenPasscode extends Component {
     super(props);
     this.state = {
       passcode: ['', '', '', ''],
+      hardcode: [1, 2, 3, 4],
     };
   }
   _popUpMsg = () => {
-    let text = this.state.passcode.toString('1', '2', '3', '4');
-    if (text === '1, 2, 3, 4') {
+    const text = this.state.passcode;
+    const code = this.state.hardcode;
+    if (text.toString() === code.toString()) {
       Alert.alert('Success!..', ' App will redirect you to the home now!', [
         {text: 'ok.'},
       ]);
     } else {
-      for (var i = 1; i <= 3; i++) {
-        if ((text !== '1', '2', '3', '4')) {
-          Alert.alert('Retry!..', ' Please enter your PIN Again!', [
-            {text: 'ok.'},
-          ]);
-        }
-      }
+      Alert.alert('Retry!..', ' Please enter your PIN Again!', [{text: 'ok.'}]);
     }
   };
 
@@ -39,7 +35,7 @@ class LockScreenPasscode extends Component {
     let tempCode = this.state.passcode;
     for (var i = 0; i < tempCode.length; i++) {
       if (tempCode[i] === '') {
-        tempCode[i] = num - -1;
+        tempCode[i] = num;
         break;
       } else {
         continue;
@@ -145,7 +141,7 @@ const styles = StyleSheet.create({
   },
   code1: {
     margin: 8,
-    width: 10,
+    width: 12,
     height: 12,
     borderRadius: 13,
     borderWidth: 2,
@@ -156,7 +152,7 @@ const styles = StyleSheet.create({
   code2: {
     margin: 8,
     width: 12,
-    height: 14,
+    height: 12,
     borderRadius: 13,
     borderWidth: 2,
     borderColor: '#0ba39c',
